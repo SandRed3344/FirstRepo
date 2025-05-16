@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRIVENI SAREE COLLECTIONS</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .header {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 120px;
+            height: 60px;
+            background-color: #ffffff;
+            border-radius: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Image Holder for Horizontal Scroll */
+        .image-holder-container {
+            position: relative;
+            width: 80%;
+            max-width: 1200px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            margin-top: 50px;
+            background-color: #ADD8E6;
+            border-radius: 8px;
+        }
+
+        .image-holder {
+            display: flex;
+            gap: 20px;
+            transition: transform 0.5s ease;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .image-holder img {
+            height: 500px;
+            width: auto;
+            object-fit: contain;
+            border: 2px solid #000;
+            border-radius: 8px;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            font-size: 30px;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 1;
+        }
+
+        .arrow-left {
+            left: 0;
+        }
+
+        .arrow-right {
+            right: 0;
+        }
+
+        /* Saree Types Section */
+        .types-section {
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .type-card {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 2px solid #000;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            cursor: pointer;
+        }
+
+        .type-card img {
+            width: 150px;
+            height: auto;
+            margin-right: 20px;
+            border: 2px solid #000;
+            border-radius: 8px;
+        }
+
+        .type-card .type-info {
+            flex: 1;
+        }
+
+        .type-card .type-info h3 {
+            margin: 0 0 10px 0;
+            font-size: 24px;
+        }
+
+        .type-card .type-info p {
+            margin: 0;
+            font-size: 16px;
+        }
+
+        .add-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #0000ff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .add-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <img src="LOGO.JPG" alt="Triveni Logo">
+    </div>
+
+    <div class="header">TRIVENI SAREE COLLECTIONS</div>
+
+    <!-- Horizontal Scroll Section -->
+    <div class="image-holder-container">
+        <div class="arrow arrow-left" onclick="scrollImages('left')">&#10094;</div>
+        <div class="image-holder" id="imageHolder">
+            <img src="LOGO.jpg" alt="Saree 1">
+            <img src="LOGO.jpg" alt="Saree 2">
+            <img src="LOGO.jpg" alt="Saree 3">
+            <img src="LOGO.jpg" alt="Saree 4">
+            <img src="LOGO.jpg" alt="Saree 5">
+            <img src="LOGO.jpg" alt="Saree 6">
+            <img src="LOGO.jpg" alt="Saree 7">
+            <img src="LOGO.jpg" alt="Saree 8">
+            <img src="LOGO.jpg" alt="Saree 1">
+            <img src="LOGO.jpg" alt="Saree 2">
+            <img src="LOGO.jpg" alt="Saree 3">
+            <img src="LOGO.jpg" alt="Saree 4">
+            <img src="LOGO.jpg" alt="Saree 5">
+            <img src="LOGO.jpg" alt="Saree 6">
+            <img src="LOGO.jpg" alt="Saree 7">
+            <img src="LOGO.jpg" alt="Saree 8">
+        </div>
+        <div class="arrow arrow-right" onclick="scrollImages('right')">&#10095;</div>
+    </div>
+
+    <!-- Saree Types Section -->
+    <div class="types-section">
+        <!-- Sequential Saree Types with Links -->
+        <a href="banarasi-saree.html" class="type-card">
+            <img src="saree_type1.jpg" alt="Banarasi Saree">
+            <div class="type-info">
+                <h3>Type 1 - Banarasi Saree</h3>
+                <p>Elegant and luxurious sarees made from fine silk with intricate designs.</p>
+            </div>
+        </a>
+        
+        <a href="kanjeevaram-saree.html" class="type-card">
+            <img src="saree_type2.jpg" alt="Kanjeevaram Saree">
+            <div class="type-info">
+                <h3>Type 2 - Kanjeevaram Saree</h3>
+                <p>Traditional sarees known for their vibrant colors and thick borders.</p>
+            </div>
+        </a>
+        
+        <a href="pochampally-saree.html" class="type-card">
+            <img src="saree_type3.jpg" alt="Pochampally Saree">
+            <div class="type-info">
+                <h3>Type 3 - Pochampally Saree</h3>
+                <p>Famous for its Ikkat weaving technique.</p>
+            </div>
+        </a>
+        
+        <a href="baluchari-saree.html" class="type-card">
+            <img src="saree_type4.jpg" alt="Baluchari Saree">
+            <div class="type-info">
+                <h3>Type 4 - Baluchari Saree</h3>
+                <p>Known for their mythological motifs and elegant craftsmanship.</p>
+            </div>
+        </a>
+        
+        <a href="patola-saree.html" class="type-card">
+            <img src="saree_type5.jpg" alt="Patola Saree">
+            <div class="type-info">
+                <h3>Type 5 - Patola Saree</h3>
+                <p>Handwoven sarees with intricate patterns and vibrant colors.</p>
+            </div>
+        </a>
+        
+        <a href="chanderi-saree.html" class="type-card">
+            <img src="saree_type6.jpg" alt="Chanderi Saree">
+            <div class="type-info">
+                <h3>Type 6 - Chanderi Saree</h3>
+                <p>Lightweight sarees with rich zari work and elegant texture.</p>
+            </div>
+        </a>
+        
+        <a href="tussar-silk-saree.html" class="type-card">
+            <img src="saree_type7.jpg" alt="Tussar Silk Saree">
+            <div class="type-info">
+                <h3>Type 7 - Tussar Silk Saree</h3>
+                <p>Popular for their natural golden sheen and texture.</p>
+            </div>
+        </a>
+        
+        <a href="muga-silk-saree.html" class="type-card">
+            <img src="saree_type8.jpg" alt="Muga Silk Saree">
+            <div class="type-info">
+                <h3>Type 8 - Muga Silk Saree</h3>
+                <p>Unique sarees made from exclusive silk native to Assam.</p>
+            </div>
+        </a>
+        
+        <a href="jamdani-saree.html" class="type-card">
+            <img src="saree_type9.jpg" alt="Jamdani Saree">
+            <div class="type-info">
+                <h3>Type 9 - Jamdani Saree</h3>
+                <p>Handwoven sarees with intricate patterns on fine muslin fabric.</p>
+            </div>
+        </a>
+        
+        <a href="kalamkari-saree.html" class="type-card">
+            <img src="saree_type10.jpg" alt="Kalamkari Saree">
+            <div class="type-info">
+                <h3>Type 10 - Kalamkari Saree</h3>
+                <p>Traditional sarees with hand-painted or block-printed designs.</p>
+            </div>
+        </a>
+        
+        <a href="maheshwari-saree.html" class="type-card">
+            <img src="saree_type11.jpg" alt="Maheshwari Saree">
+            <div class="type-info">
+                <h3>Type 11 - Maheshwari Saree</h3>
+                <p>Graceful sarees with a mix of cotton and silk, known for geometric patterns.</p>
+            </div>
+        </a>
+        
+        <a href="cotton-silk-saree.html" class="type-card">
+            <img src="saree_type12.jpg" alt="Cotton Silk Saree">
+            <div class="type-info">
+                <h3>Type 12 - Cotton Silk Saree</h3>
+                <p>Perfect blend of comfort and luxury, suitable for all occasions.</p>
+            </div>
+        </a>
+        
+        <a href="gadwal-saree.html" class="type-card">
+            <img src="saree_type13.jpg" alt="Gadwal Saree">
+            <div class="type-info">
+                <h3>Type 13 - Gadwal Saree</h3>
+                <p>Lightweight sarees with vibrant zari borders and pallu.</p>
+            </div>
+        </a>
+        
+        <a href="kasavu-saree.html" class="type-card">
+            <img src="saree_type14.jpg" alt="Kasavu Saree">
+            <div class="type-info">
+                <h3>Type 14 - Kasavu Saree</h3>
+                <p>Elegant white and gold sarees from Kerala.</p>
+            </div>
+        </a>
+        
+        <a href="dhakai-saree.html" class="type-card">
+            <img src="saree_type15.jpg" alt="Dhakai Saree">
+            <div class="type-info">
+                <h3>Type 15 - Dhakai Saree</h3>
+                <p>Exquisite handloom sarees from Dhaka, known for intricate thread work.</p>
+            </div>
+        </a>
+        
+        <a href="sambalpuri-saree.html" class="type-card">
+            <img src="saree_type16.jpg" alt="Sambalpuri Saree">
+            <div class="type-info">
+                <h3>Type 16 - Sambalpuri Saree</h3>
+                <p>Unique sarees featuring traditional motifs and tie-dye patterns.</p>
+            </div>
+        </a>
+        
+        <a href="ilkal-saree.html" class="type-card">
+            <img src="saree_type17.jpg" alt="Ilkal Saree">
+            <div class="type-info">
+                <h3>Type 17 - Ilkal Saree</h3>
+                <p>Traditional sarees from Karnataka with signature red borders.</p>
+            </div>
+        </a>
+        
+        <a href="chikankari-saree.html" class="type-card">
+            <img src="saree_type18.jpg" alt="Chikankari Saree">
+            <div class="type-info">
+                <h3>Type 18 - Chikankari Saree</h3>
+                <p>Delicate sarees featuring hand-embroidered Chikan work.</p>
+            </div>
+        </a>
+        
+        <a href="narayanpet-saree.html" class="type-card">
+            <img src="saree_type19.jpg" alt="Narayanpet Saree">
+            <div class="type-info">
+                <h3>Type 19 - Narayanpet Saree</h3>
+                <p>Lightweight sarees with distinct checkered patterns.</p>
+            </div>
+        </a>
+        
+        <a href="bhagalpuri-silk-saree.html" class="type-card">
+            <img src="saree_type20.jpg" alt="Bhagalpuri Silk Saree">
+            <div class="type-info">
+                <h3>Type 20 - Bhagalpuri Silk Saree</h3>
+                <p>Known as the "Queen of Silks," featuring unique Tussar silk weaving.</p>
+            </div>
+        </a>
+        
+
+
+
+        <a href="main.html" class="add-button">BACK TO HOME</a>
+    </div>
+
+    <script>
+        let currentIndex = 0;
+
+        function scrollImages(direction) {
+            const images = document.querySelectorAll('#imageHolder img');
+            const totalImages = images.length / 2;
+
+            if (direction === 'left') {
+                currentIndex = (currentIndex === 0) ? totalImages - 1 : currentIndex - 1;
+            } else if (direction === 'right') {
+                currentIndex = (currentIndex === totalImages - 1) ? 0 : currentIndex + 1;
+            }
+
+            const imageWidth = images[0].offsetWidth;
+            const scrollAmount = imageWidth * currentIndex;
+
+            document.getElementById('imageHolder').style.transform = `translateX(-${scrollAmount}px)`;
+        }
+    </script>
+</body>
+</html>

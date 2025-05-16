@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triveni Saree Collection</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .top-section {
+            background-color: #ffffff;
+            color: #000000;
+            font-weight: bold;
+            font-size: 36px;
+            padding: 10px 0;
+            flex: 0 0 20%;
+        }
+
+        .middle-section {
+            background-color: #add8e6;
+            color: #000000;
+            flex: 0 0 60%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .logo {
+            width: 187.5px;
+            height: 187.5px;
+            background-color: #ffffff;
+            border: 2px solid #000000;
+            border-radius: 50%;
+            margin: 20px 0;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            color: #000000;
+        }
+
+        .marquee-container {
+            width: 100%;
+            position: relative;
+        }
+
+        .marquee-container::before,
+        .marquee-container::after {
+            content: "";
+            display: block;
+            height: 2px;
+            background-color: #000000;
+            margin: 10px 0;
+        }
+
+        marquee {
+            font-size: 30px;
+            color: #000000;
+            margin: 10px 0;
+        }
+
+        .visitor-count {
+            font-size: 20px;
+            color: #000000;
+            margin-top: 10px;
+            padding: 10px;
+            border: 2px solid #000000;
+            background-color: #ffffff;
+            border-radius: 8px;
+            display: inline-block;
+        }
+
+        .bottom-section {
+            background-color: #ffffff;
+            flex: 0 0 20%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .nav-button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #0000ff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .nav-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <script>
+        // Simple visitor counter using local storage
+        function updateVisitorCount() {
+            let count = localStorage.getItem('visitorCount');
+            count = count ? parseInt(count) + 1 : 1;
+            localStorage.setItem('visitorCount', count);
+            document.getElementById('visitor-count').innerText = `Visitors: ${count}`;
+        }
+
+        // Check if logo image exists
+        function checkLogo() {
+            const logo = document.querySelector('.logo');
+            const img = new Image();
+            img.src = 'logo.jpg';
+            img.onload = () => {
+                logo.style.backgroundImage = "url('logo.jpg')";
+            };
+            img.onerror = () => {
+                logo.innerText = 'Image Not Found';
+            };
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            updateVisitorCount();
+            checkLogo();
+        });
+    </script>
+</head>
+<body>
+    <div class="top-section">
+        TRIVENI SAREE COLLECTIONS
+    </div>
+
+    <div class="middle-section">
+        <div class="marquee-container">
+            <marquee behavior="scroll" direction="left">Welcome to Triveni Saree Collection! Check out the latest updates and offers!</marquee>
+        </div>
+        <div class="logo"></div>
+        <div class="visitor-count" id="visitor-count">Visitors: 0</div>
+    </div>
+
+    <div class="bottom-section">
+        <a href="saree-types.html" class="nav-button">Explore Sarees</a>
+    </div>
+</body>
+</html>
